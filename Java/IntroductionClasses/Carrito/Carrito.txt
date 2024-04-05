@@ -1,25 +1,29 @@
 package carrito;
 
 public class Carrito {
-  int Año;
-  String Marca;
-  int Cilindraje;
-  int Precio;
+    int Año;
+    String Marca;
+    int Cilindraje;
+    int Precio;
 
-  public Carrito(int year, String name, int cc) {
-    Año = year; 
-    Marca = name;
-    Cilindraje = cc;
-  }
+    public Carrito(int year, String name, int cc) {
+        Año = year; 
+        Marca = name;
+        Cilindraje = cc;
+        // Inicializar el precio a 0 en el constructor
+        Precio = 0;
+    }
   
-  public int actualizarPrecio(int prize){
-      Precio = prize;
-      return Precio;
-  }
+    // Método para actualizar el precio
+    public void actualizarPrecio(int prize) {
+        Precio = prize;
+    }
   
-  public static void main(String[] args) {
-    Carrito myCar = new Carrito(1969, "Mustang", 1400);
-    System.out.println(myCar.Año + " " + myCar.Marca + " " + myCar.Cilindraje +" " + myCar.Precio);
-    System.out.println("Nuevo precio: " + myCar.actualizarPrecio(1500));
-  }
+    public static void main(String[] args) {
+        Carrito myCar = new Carrito(1969, "Mustang", 1400);
+        System.out.println(myCar.Año + " " + myCar.Marca + " " + myCar.Cilindraje +" " + myCar.Precio);
+        // Llamar al método actualizarPrecio() con el nuevo precio
+        myCar.actualizarPrecio(1500);
+        System.out.println("Nuevo precio: " + myCar.Precio);
+    }
 }
