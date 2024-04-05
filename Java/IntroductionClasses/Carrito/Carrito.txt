@@ -1,57 +1,25 @@
+package carrito;
 
-public class Carro {
-    // Atributos
-    private String marca;
-    private String modelo;
-    private int anio;
+public class Carrito {
+  int Año;
+  String Marca;
+  int Cilindraje;
+  int Precio;
 
-    // Constructor
-    public Carro(String marca, String modelo, int anio) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.anio = anio;
-    }
-
-    // Métodos getters y setters
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public int getAnio() {
-        return anio;
-    }
-
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
-
-    // Método para imprimir los detalles del carro
-    public void imprimirDetalles() {
-        System.out.println("Marca: " + marca);
-        System.out.println("Modelo: " + modelo);
-        System.out.println("Año: " + anio);
-    }
-
-    // Método principal
-    public static void main(String[] args) {
-        // Crear un objeto Carro usando el constructor
-        Carro miCarro = new Carro("Toyota", "Corolla", 2022);
-        
-        // Imprimir los detalles del carro
-        System.out.println("Detalles del carro:");
-        miCarro.imprimirDetalles();
-    }
+  public Carrito(int year, String name, int cc) {
+    Año = year; 
+    Marca = name;
+    Cilindraje = cc;
+  }
+  
+  public int actualizarPrecio(int prize){
+      Precio = prize;
+      return Precio;
+  }
+  
+  public static void main(String[] args) {
+    Carrito myCar = new Carrito(1969, "Mustang", 1400);
+    System.out.println(myCar.Año + " " + myCar.Marca + " " + myCar.Cilindraje +" " + myCar.Precio);
+    System.out.println("Nuevo precio: " + myCar.actualizarPrecio(1500));
+  }
 }
-
